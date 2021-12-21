@@ -5,14 +5,13 @@ const CourseSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: [true, 'Please add a title'],
-
     },
     description: {
         type: String,
         required: [true, 'Please add a description']
     },
     weeks: {
-        type: String,
+        type: Number,
         required: [true, 'Please add a number of weeks']
 
     },
@@ -21,7 +20,7 @@ const CourseSchema = new mongoose.Schema({
         required: [true, 'Please add a tuition cost']
     },
     minimumSkill: {
-        type: [String],
+        type: String,
         required: [true, 'Please add a minimum skill'],
         enum: ['beginner', 'intermediate', 'advanced']
     },
@@ -40,4 +39,4 @@ const CourseSchema = new mongoose.Schema({
     }
 });
 
-exports.default = mongoose.model('Course', CourseSchema);
+module.exports = mongoose.model('Course', CourseSchema);
