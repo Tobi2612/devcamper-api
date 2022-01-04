@@ -7,7 +7,7 @@ const errorHandler = (err, req, res, next) => {
     //mongose bad objectid
     if (err.name === 'CastError') {
         const message = `Resource not found`;
-        error = new ErrorResponse(message, 404)
+        error = new ErrorResponse(message, 404);
     }
 
     //mongo duplicate key
