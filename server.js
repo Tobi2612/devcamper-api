@@ -78,6 +78,14 @@ app.use('/api/v1/users', users);
 app.use('/api/v1/reviews', reviews);
 
 
+// route to api documentation
+app.get("/", (req, res) => {
+
+    res.status(301).redirect("https://documenter.getpostman.com/view/12085227/UVXbtyqT")
+
+})
+
+
 app.use(errorHandler);
 const PORT = process.env.PORT || 3000;
 
